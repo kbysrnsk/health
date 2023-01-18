@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MissionController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +29,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+//トップページへ移動
+Route::get('/', function(){
+    return view('mission/top');
+});
 
+//トップページへ移動
+Route::get('/mission/top',  [MissionController::class, 'top']);
+//今日のミッションページへ移動
+Route::get('/mission/mission_today',  [MissionController::class, 'mission_today']);
+//ミッション作成ページへ移動
+Route::get('/mission/mission_create',  [MissionController::class, 'mission_create']);
+//記事ページへ移動
+Route::get('/health_article/article',  [ArticleController::class, 'article']);
+//記事のお気に入りへ移動
+Route::get('/health_article/favorite',  [ArticleController::class, 'favorite']);
+//マイページへ移動
+Route::get('/health_mypage/mypage',  [MissionController::class, 'mypage']);
 require __DIR__.'/auth.php';

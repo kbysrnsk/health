@@ -6,8 +6,23 @@ use Illuminate\Http\Request;
 use App\Models\mission_today;
 class MissionController extends Controller
 {
-        public function mission_today(mission_today $today)
+    public function top()
     {
-        return $today->get();//$postの中身を戻り値にする。
+        return view('mission/top');
+    }
+    
+        public function mission_today()
+    {
+        return view('mission/mission_today');
+    }
+    
+    public function mission_create()
+    {
+        return view('mission/mission_create');
+    }
+    
+    public function mypage()
+    {
+        return view('health_mypage/mypage');
     }
 }

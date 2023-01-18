@@ -21,11 +21,39 @@
 <div class ="mission_today">
     <h1>今日のミッション</h1>
     <p>今日も一日頑張りましょう！</p>
-    <div class ="create_mission">
-        <a href='/mission/mission_create'>今日のミッションを作成する</a>
+    
+    <div class ="mission_create">
+        <p>ジャンルごとのミッション個数を入力してください。</p>
+        <div class ="exercise">
+            <p>運動</p>
+         <form>
+            <input type="number" max="5" min="1">
+         </form>
+        </div>
+
+        <div class ="food">
+            <p>食事</p>
+         <form>
+            <input type="number" max="5" min="1">
+         </form>
+        </div>
+
+        <div class ="sleep">
+            <p>睡眠</p>
+         <form>
+            <input type="number" max="5" min="1">
+         </form>
+        </div>
+
+        <div class ="mental">
+            <p>メンタルヘルス</p>
+         <form>
+            <input type="number" max="5" min="1">
+         </form>
+        </div>
     </div>
 </div>    
-   
+    
 
 
 

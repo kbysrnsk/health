@@ -12,20 +12,31 @@
     <div class="header w_inner">
         <p></p>
         <ul>
-          <li><a href='/mission/top'>トップ</a></li>
+           <li><a href='/mission/top'>トップ</a></li>
           <li><a href='/mission/mission_today'>今日のミッション</a></li>
           <li><a href='/health_article/article'>記事</a></li>
           <li><a href='/health_mypage/mypage'>マイページ</a></li>
         </ul>
     </div>
-<div class ="mission_today">
-    <h1>今日のミッション</h1>
-    <p>今日も一日頑張りましょう！</p>
-    <div class ="create_mission">
-        <a href='/mission/mission_create'>今日のミッションを作成する</a>
+<div class ="article">
+    <h1>記事</h1>
+    <p>健康に関する情報をまとめています。</p>
+    <div class="article_category">
+        <a href="">食事</a>
+        <a href="">運動</a>
+        <a href="">睡眠</a>
+        <a href="">メンタルヘルス</a>
     </div>
-</div>    
+    <div class ="favorite">
+        <a href='/health_article/favorite'>お気に入りの記事</a>
+    </div>
+    <div class = "article_container">
+        <h2>title</h2>
+        <p>body</p>
+    </div>
    
+</div>    
+    
 
 
 
