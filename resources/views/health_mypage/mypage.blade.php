@@ -16,6 +16,7 @@
           <li><a href='/mission/mission_today'>今日のミッション</a></li>
           <li><a href='/health_article/article'>記事</a></li>
           <li><a href='/health_mypage/mypage'>マイページ</a></li>
+          <li><a href='/master/mission_master'>ミッション管理</a></li>
         </ul>
     </div>
 <div class ="mypage">

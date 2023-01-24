@@ -46,4 +46,13 @@ Route::get('/health_article/article',  [ArticleController::class, 'article']);
 Route::get('/health_article/favorite',  [ArticleController::class, 'favorite']);
 //マイページへ移動
 Route::get('/health_mypage/mypage',  [MissionController::class, 'mypage']);
+//管理者のみのミッション一覧ページへ移動
+Route::get('/master/mission_master',  [MissionController::class, 'Mission']);
+//管理者ミッション作成
+Route::get('/master/create_master', [MissionController::class, 'create']);
+//管理者ミッション登録
+Route::post('/master/mission_master', [MissionController::class, 'store']);
+//管理者ミッション編集、更新
+Route::get('/master/create_master/{mission}/edit}', [MissionController::class, 'edit']);
+Route::put('/master/create_master/{mission}', [MissionController::class, 'update']);
 require __DIR__.'/auth.php';

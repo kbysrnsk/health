@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('mission', function (Blueprint $table) {
            $table->bigIncrements('id');
-            $table->foreignId('category_id');
-            $table->string('category_name');
+            $table->unsignedBigInteger('category_id')->references('id')->on('category');
             $table->string('mission_title');
             $table->string('mission_body');
             $table->timestamps();

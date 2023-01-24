@@ -18,24 +18,25 @@
           <li><a href='/health_mypage/mypage'>マイページ</a></li>
         </ul>
     </div>
-<div class ="article">
-    <h1>記事</h1>
-    <p>健康に関する情報をまとめています。</p>
+<div class ="mission_register">
+    <h1>ミッション登録</h1>
     <div class="article_category">
         <a href="">食事</a>
         <a href="">運動</a>
         <a href="">睡眠</a>
         <a href="">メンタルヘルス</a>
     </div>
-    <div class ="favorite">
-        <a href='/health_article/favorite'>お気に入りの記事</a>
-    </div>
     
-    <div class = "article_container">
-        <h2>title</h2>
-        <p>body</p>
+    <div class ="mission">
+        <a href='/master/create_master'>create</a>
+    @foreach($mission as $mission)
+    <div class = "mission_container">
+       <h2 class='title'>{{ $mission->mission_title }}</h2>
+                    <p class='body'>{{ $mission->mission_body }}</p>
+                    <div class="edit"><a href="/master/{{ $mission->id }}/edit_master">edit</a></div>
     </div>
-  
+   @endforeach
+    </div>
 </div>    
     
 

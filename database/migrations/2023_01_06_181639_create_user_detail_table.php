@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('user_detail', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('user_id');
+            $table->unsignedBigInteger('user_id')->constrained();
             $table->string('username',20);
             $table->string('email')->unique();
             $table->string('password')->unique();

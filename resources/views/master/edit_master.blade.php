@@ -18,27 +18,35 @@
           <li><a href='/health_mypage/mypage'>マイページ</a></li>
         </ul>
     </div>
-<div class ="article">
-    <h1>記事</h1>
-    <p>健康に関する情報をまとめています。</p>
+<div class ="mission_register">
+    <h1>ミッション登録</h1>
     <div class="article_category">
         <a href="">食事</a>
         <a href="">運動</a>
         <a href="">睡眠</a>
         <a href="">メンタルヘルス</a>
     </div>
-    <div class ="favorite">
-        <a href='/health_article/favorite'>お気に入りの記事</a>
-    </div>
-    
-    <div class = "article_container">
-        <h2>title</h2>
-        <p>body</p>
-    </div>
-  
+   
 </div>    
     
-
+<h1>ミッション名</h1>
+        <form action="/master/mission_master/{{$mission->id}}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="title">
+                <h2>Title</h2>
+                <input type="text" name="mission[mission_title]" placeholder="タイトル"/>
+                <input type="text" name="mission[category_name]" placeholder="カテゴリ"/>
+            </div>
+            <div class="body">
+                <h2>Body</h2>
+                <textarea name="mission[mission_body]" placeholder="ミッション詳細"></textarea>
+            </div>
+            <input type="submit" value="store"/>
+        </form>
+        <div class="footer">
+            <a href="/">戻る</a>
+        </div>
 
 
 
