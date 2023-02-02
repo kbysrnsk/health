@@ -24,6 +24,8 @@
     <div class ="create_mission">
         <a href='/mission/mission_create'>今日のミッションを作成する</a>
     </div>
+   
+    
 </div>    
    
 

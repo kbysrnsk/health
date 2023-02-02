@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
-            $table->id();
+        Schema::create('mission_todays', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('mission_id')->references('id')->on('missions');
+            $table->boolean('achievement')->default(0);
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('mission_today');
     }
 };

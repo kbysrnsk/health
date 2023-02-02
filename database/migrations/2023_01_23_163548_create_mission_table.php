@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mission', function (Blueprint $table) {
+        Schema::create('missions', function (Blueprint $table) {
            $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id')->references('id')->on('category');
             $table->string('mission_title');
             $table->string('mission_body');
             $table->timestamps();
-           
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

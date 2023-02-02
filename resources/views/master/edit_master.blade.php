@@ -30,19 +30,27 @@
 </div>    
     
 <h1>ミッション名</h1>
-        <form action="/master/mission_master/{{$mission->id}}" method="POST">
+       <form action="/master/mission_master/{{$mission->id}}" method="POST">
             @csrf
             @method('PUT')
+             <div class="category">
+                <h2>Category</h2>
+                <select name="mission[category_id]">
+                    @foreach($category as $category)
+                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="title">
                 <h2>Title</h2>
                 <input type="text" name="mission[mission_title]" placeholder="タイトル"/>
-                <input type="text" name="mission[category_name]" placeholder="カテゴリ"/>
+                
             </div>
             <div class="body">
                 <h2>Body</h2>
                 <textarea name="mission[mission_body]" placeholder="ミッション詳細"></textarea>
             </div>
-            <input type="submit" value="store"/>
+            <input type="submit" value='保存'/>
         </form>
         <div class="footer">
             <a href="/">戻る</a>

@@ -16,12 +16,11 @@
           <li><a href='/mission/mission_today'>今日のミッション</a></li>
           <li><a href='/health_article/article'>記事</a></li>
           <li><a href='/health_mypage/mypage'>マイページ</a></li>
-          <li><a href='/master/mission_master'>ミッション管理</a></li>
         </ul>
     </div>
-<div class ="mission_record">
-    <h1>過去の記録を確認できます。</h1>
-    
+<div class ="mission_today">
+    <h1>今日のミッション</h1>
+    <p>今日も一日頑張りましょう！</p>
     
      @foreach($mission_todays as $mission_today)
     <div class="mission_container">

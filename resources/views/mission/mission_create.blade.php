@@ -21,37 +21,55 @@
 <div class ="mission_today">
     <h1>今日のミッション</h1>
     <p>今日も一日頑張りましょう！</p>
-    
+   <form action="/mission/today_created" method="POST">
+       @csrf
     <div class ="mission_create">
         <p>ジャンルごとのミッション個数を入力してください。</p>
         <div class ="exercise">
             <p>運動</p>
-         <form>
-            <input type="number" max="5" min="1">
-         </form>
+        <select name="exercise_int">
+           
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
         </div>
 
-        <div class ="food">
+        <div class ="meal">
             <p>食事</p>
-         <form>
-            <input type="number" max="5" min="1">
-         </form>
+         <select name="meal_int">
+             
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
         </div>
 
         <div class ="sleep">
             <p>睡眠</p>
-         <form>
-            <input type="number" max="5" min="1">
-         </form>
+         <select name="sleep_int">
+            
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
         </div>
 
         <div class ="mental">
             <p>メンタルヘルス</p>
-         <form>
-            <input type="number" max="5" min="1">
-         </form>
+         <select name="mental_int">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
         </div>
     </div>
+    <input type="submit" value="make">
+   </form> 
 </div>    
     
 

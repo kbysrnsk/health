@@ -31,9 +31,14 @@
         <a href='/master/create_master'>create</a>
     @foreach($mission as $mission)
     <div class = "mission_container">
-       <h2 class='title'>{{ $mission->mission_title }}</h2>
+       <h2 class='title'>
+           <a href="/master/mission_master/{{$mission->id}}">{{ $mission->mission_title }}</h2></a>
                     <p class='body'>{{ $mission->mission_body }}</p>
-                    <div class="edit"><a href="/master/{{ $mission->id }}/edit_master">edit</a></div>
+    <form action="/master/mission_master/{{ $mission->id }}" id="form_{{ $mission->id }}" method="post">
+    @csrf
+    @method('DELETE')
+    <button type="button" onclick="deletemission({{ $mission->id }})">delete</button> 
+    </form>
     </div>
    @endforeach
     </div>
@@ -47,7 +52,15 @@
 
 
 
+<script>
+    function deletemission(id) {
+        'use strict'
 
+        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+        }
+    }
+</script>
    
 
 </body>

@@ -52,7 +52,7 @@
             <input type="submit" value="store"/>
         </form>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/master/mission_master">戻る</a>
         </div>
 
 

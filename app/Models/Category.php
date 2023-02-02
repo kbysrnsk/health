@@ -13,5 +13,5 @@ class Category extends Model
             return $this->hasMany(Mission::class);  
         }
         
-    protected $table ='category';
+   
 }

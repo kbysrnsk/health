@@ -41,7 +41,7 @@ Route::get('/mission/mission_today',  [MissionController::class, 'mission_today'
 //ミッション作成ページへ移動
 Route::get('/mission/mission_create',  [MissionController::class, 'mission_create']);
 //記事ページへ移動
-Route::get('/health_article/article',  [ArticleController::class, 'article']);
+//Route::get('/health_article/article',  [ArticleController::class, 'article']);
 //記事のお気に入りへ移動
 Route::get('/health_article/favorite',  [ArticleController::class, 'favorite']);
 //マイページへ移動
@@ -52,7 +52,15 @@ Route::get('/master/mission_master',  [MissionController::class, 'Mission']);
 Route::get('/master/create_master', [MissionController::class, 'create']);
 //管理者ミッション登録
 Route::post('/master/mission_master', [MissionController::class, 'store']);
-//管理者ミッション編集、更新
-Route::get('/master/create_master/{mission}/edit}', [MissionController::class, 'edit']);
-Route::put('/master/create_master/{mission}', [MissionController::class, 'update']);
+//管理者ミッション詳細
+Route::get('/master/mission_master/{mission}', [MissionController::class ,'show']);
+//管理者ミッション削除
+Route::delete('/master/mission_master/{mission}', [MissionController::class,'delete']);
+//今日のミッション作成
+Route::post('/mission/today_created', [MissionController::class, 'make']);
+//今日のミッション表示
+Route::get('/mission/today_created', [MissionController::class, 'created']);
+//news api 実装
+Route::get('/health_article/article', [ArticleController::class, 'index']);
+
 require __DIR__.'/auth.php';

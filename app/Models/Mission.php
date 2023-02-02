@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Http\Contorollers\MIssionController;
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Mission extends Model
 {
     use HasFactory;
-    
-    protected $table = 'mission';
+    use SoftDeletes;
+   
     protected $fillable = [
     'mission_title',
     'mission_body',
@@ -20,5 +21,10 @@ class Mission extends Model
         public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+    
+        public function mission_todays()
+    {
+        return $this->hasMany(Mission_today::class);
     }
 }
