@@ -21,4 +21,9 @@ class Mission_today extends Model
     {
         return $this->belongsTo(Mission::class);  
     }
+    
+    public function user()   
+    {
+        return $this->belongsTo(User::class);  
+    }
 }

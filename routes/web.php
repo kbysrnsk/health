@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MissionController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,23 +18,23 @@ use App\Http\Controllers\ArticleController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+//ユーザ登録
+Route::get('auth.register',  [RegisteredUserController::class, 'create']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 //トップページへ移動
 Route::get('/', function(){
-    return view('mission/top');
+   return view('mission/top');
 });
-
 //トップページへ移動
 Route::get('/mission/top',  [MissionController::class, 'top']);
 //今日のミッションページへ移動
@@ -63,4 +64,27 @@ Route::get('/mission/today_created', [MissionController::class, 'created']);
 //news api 実装
 Route::get('/health_article/article', [ArticleController::class, 'index']);
 
+//ミッション達成
+//Route::post('/mission/today_created', [MissionController::class, 'achievement']);
+//達成表示
+//Route::get('/mission/today_created', [MissionController::class, 'a-view']);
+//未達成表示
+//Route::get('/mission/today_created', [MissionController::class, 'n-view']);
+//ミッション未達成
+//Route::post('/mission/today_created', [MissionController::class, 'nonachievement']);
+//昨日の記録
+Route::get('/health_mypage/mypage-1', [MissionController::class, 'yesterday']);
+//2日前の記録
+Route::get('/health_mypage/mypage-2', [MissionController::class, 'two_before']);
+//3日前の記録
+Route::get('/health_mypage/mypage-3', [MissionController::class, 'three_before']);
+//4日前の記録
+Route::get('/health_mypage/mypage-4', [MissionController::class, 'four_before']);
+//5日前の記録
+Route::get('/health_mypage/mypage-5', [MissionController::class, 'five_before']);
+//6日前の記録
+Route::get('/health_mypage/mypage-6', [MissionController::class, 'six_before']);
+//7日前の記録
+Route::get('/health_mypage/mypage-7', [MissionController::class, 'seven_before']);
+});
 require __DIR__.'/auth.php';

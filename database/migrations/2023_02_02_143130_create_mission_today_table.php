@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mission_todays', function (Blueprint $table) {
+        Schema::create('mission_todays', function (Blueprint $table){
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('mission_id')->references('id')->on('missions');
             $table->boolean('achievement')->default(0);
             $table->timestamps();
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mission_today');
+        Schema::dropIfExists('mission_todays');
     }
 };

@@ -48,4 +48,12 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+    
+    
+    public function redirectPath()
+    {
+        return view('mission/top');
+    }
 }
+
+

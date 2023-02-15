@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サンプルです</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href='/css/reset.css'>
+    <link rel="stylesheet" href='/css/display.css'>
 </head>
 <body>
     <div class="header w_inner">
@@ -20,27 +20,14 @@
     </div>
 <div class ="article">
     <h1>記事</h1>
-    <p>健康に関する情報をまとめています。</p>
-    <div class="article_category">
-        <a href="">食事</a>
-        <a href="">運動</a>
-        <a href="">睡眠</a>
-        <a href="">メンタルヘルス</a>
-    </div>
-    <div class ="favorite">
-        <a href='/health_article/favorite'>お気に入りの記事</a>
-    </div>
-    
-    <div class = "article_container">
-        <h2>title</h2>
-        <p>body</p>
-    </div>
+    <p>健康に関する記事を閲覧できます。</p>
+  
   
 </div>    
     <div class="container ">
         @foreach($news as $data)
         <div class="card-body pt-0 pb-2">
-            <h3 class="h5 card-title">
+            <h3 class="title">
                 <a href="{{$data['url']}}">{{$data['name']}}</a>
             </h3>
             <div class="card-text">

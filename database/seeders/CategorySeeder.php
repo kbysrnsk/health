@@ -17,19 +17,19 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-                'category_name' => 'meal',
+                'category_name' => '食事',
          ]);
          
           DB::table('categories')->insert([
-                'category_name' => 'exercise',
+                'category_name' => '運動',
          ]);
          
           DB::table('categories')->insert([
-                'category_name' => 'sleep',
+                'category_name' => '睡眠',
          ]);
          
           DB::table('categories')->insert([
-                'category_name' => 'mental',
+                'category_name' => 'メンタルヘルス',
          ]);
     }
 }
